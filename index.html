@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jiss_Portfolio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #222;
+      background: #fff;
+    }
+
+    /* NAV */
+    nav {
+      border-bottom: 1px solid #e8e8e8;
+      padding: 14px 0;
+    }
+    nav ul {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    nav ul li:first-child {
+      font-weight: 600;
+      margin-right: auto;
+    }
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-size: 0.9rem;
+    }
+    nav a:hover { color: #000; }
+    nav ul li:first-child a { color: #222; font-size: 1rem; }
+
+    /* MAIN LAYOUT */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* PROFILE */
+    .profile {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: #f0f0f0;
+      border: 1px solid #e0e0e0;
+    }
+    .profile-info h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .profile-info .title {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .profile-links a {
+      font-size: 0.85rem;
+      color: #0070c0;
+      text-decoration: none;
+    }
+    .profile-links a:hover { text-decoration: underline; }
+    .profile-links span { color: #ccc; }
+
+    /* BIO */
+    .bio {
+      font-size: 0.95rem;
+      color: #333;
+      margin-bottom: 16px;
+    }
+    .bio p + p { margin-top: 12px; }
+    .bio a { color: #0070c0; text-decoration: none; }
+    .bio a:hover { text-decoration: underline; }
+
+    /* DIVIDER */
+    hr {
+      border: none;
+      border-top: 1px solid #e8e8e8;
+      margin: 40px 0;
+    }
+
+    /* PROJECTS */
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #111;
+    }
+    .projects-intro {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .project {
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .project:last-child { border-bottom: none; }
+
+    .project-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 0;
+      cursor: pointer;
+      user-select: none;
+    }
+    .project-header:hover .project-title { color: #0070c0; }
+
+    .project-title {
+      font-weight: 600;
+      font-size: 0.97rem;
+      color: #222;
+      transition: color 0.15s;
+    }
+
+    .project-toggle {
+      font-size: 0.75rem;
+      color: #bbb;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .project.open .project-toggle { transform: rotate(180deg); }
+
+    .project-body {
+      display: none;
+      padding: 0 0 16px 0;
+    }
+    .project.open .project-body { display: block; }
+
+    .project-brief {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+    .project-tech {
+      font-size: 0.8rem;
+      color: #999;
+      margin-bottom: 8px;
+    }
+    .project-link {
+      font-size: 0.85rem;
+      color: #0070c0;
+      text-decoration: none;
+    }
+    .project-link:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #bbb;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    @media (max-width: 520px) {
+      .profile { flex-direction: column; align-items: center; text-align: center; }
+      .profile-links { justify-content: center; }
+      nav ul { flex-wrap: wrap; gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li><a href="#">Jiss C J</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="YOUR_CV_LINK.pdf">CV</a></li>
+      <li><a href="mailto:YOUR@EMAIL.COM">Email</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+
+    <!-- PROFILE -->
+    <div class="profile">
+      <img src="D:\Portfolio_jiss\jiss.jpeg" alt="Jiss C J" onerror="this.style.display='none'" />
+      <div class="profile-info">
+        <h1>Jiss C J</h1>
+        <div class="title">
+          COCHIN UNIVERSITY OF SCIENCE AND TECHNOLOGY<br>
+          ALAPPUZHA<br>
+          
+        </div>
+        <div class="profile-links">
+          <a href="https://github.com/cjjiss" target="_blank">GitHub</a>
+          <span>|</span>
+          <a href="https://linkedin.com/in/jiss-cj" target="_blank">LinkedIn</a>
+          <span>|</span>
+          <a href="mailto:YOUR@EMAIL.COM">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BIO -->
+    <div class="bio">
+      <p>
+        Hey! I'm <strong>Jiss</strong>. I’m a computer science graduate, 
+        with research interests in computer vision and multi-agent 
+        reinforcement learning. I enjoy building models from scratch 
+        and experimenting with ideas to understand how intelligent systems
+         perceive and make decisions.
+      </p>
+      <p>
+        I graduated from Cochin University of Science and Technology with a CGPA of 9.08/10, 
+        where I developed a strong foundation in machine learning, 
+        deep learning, and optimization. My postgraduate research focused 
+        on structural MRI-based autism detection, which led to a Springer 
+        publication.
+      </p>
+      <p>
+       Outside of academics, I enjoy reading science fiction novels such as Dune, playing story-driven and grand strategy games, traveling to mountainous regions, 
+       and spending time at the gym. I also enjoy working on spontaneous side projects, building and experimenting with ideas, and occasionally breaking things 😅.
+      </p>
+    </div>
+
+    <hr />
+
+    <!-- PROJECTS -->
+    <h2 id="projects">Projects</h2>
+    <p class="projects-intro">These are some side projects I built for fun to explore ideas that interested me at the time.</p>
+
+    <div class="project">
+      <div class="project-header" onclick="toggle(this)">
+        <span class="project-title">Transformer From Scratch</span>
+        <span class="project-toggle">▼</span>
+      </div>
+      <div class="project-body">
+        <div class="project-brief">
+          Implemented a Transformer from scratch in PyTorch to deeply understand the "Attention Is All You Need"
+           architecture, including multi-head attention, positional encoding, masked decoding, and seq2seq training on a real English -> Dutch translation task.
+        <div class="project-tech">Python · React · etc.</div>
+        <a class="project-link" href="https://github.com/cjjiss/Transformer_from_scratch" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-header" onclick="toggle(this)">
+        <span class="project-title">Project Title</span>
+        <span class="project-toggle">▼</span>
+      </div>
+      <div class="project-body">
+        <div class="project-brief">
+          One or two sentences describing what this project does, why you built it, and what makes it interesting.
+        </div>
+        <div class="project-tech">Python · React · etc.</div>
+        <a class="project-link" href="YOUR_LINK" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-header" onclick="toggle(this)">
+        <span class="project-title">Vision Transformer From Scratch</span>
+        <span class="project-toggle">▼</span>
+      </div>
+      <div class="project-body">
+        <div class="project-brief">
+          TBD
+        </div>
+        <div class="project-tech">Python · React · etc.</div>
+        <a class="project-link" href="YOUR_LINK" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-header" onclick="toggle(this)">
+        <span class="project-title">Project Title</span>
+        <span class="project-toggle">▼</span>
+      </div>
+      <div class="project-body">
+        <div class="project-brief">
+          One or two sentences describing what this project does, why you built it, and what makes it interesting.
+        </div>
+        <div class="project-tech">Python · React · etc.</div>
+        <a class="project-link" href="YOUR_LINK" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+
+
+    <script>
+      function toggle(header) {
+        header.parentElement.classList.toggle('open');
+      }
+    </script>
+
+    <footer>Built through failure</footer>
+
+  </div>
+
+</body>
+</html>
